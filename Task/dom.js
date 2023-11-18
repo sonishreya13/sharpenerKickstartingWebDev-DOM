@@ -10,3 +10,7 @@ groupList[2].style.backgroundColor="green"
 for (let i = 0; i < groupList.length; i++) {
     groupList[i].style.fontWeight = 'bold'; // Apply the style change to each element
   }
+  let li= document.getElementsByTagName('li')
+for (let i = 0; i < li.length; i++) {
+    li[i].style.fontWeight = 'bold'; // Apply the style change to each element
+  }
