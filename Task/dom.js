@@ -34,9 +34,80 @@
 
   //Use of QUERYSELECTORALL
 
-var itemList= document.querySelectorAll('.list-group-item')
-itemList[2].style.color= "green"
-var odd= document.querySelectorAll('.list-group-item:nth-child(odd)')
-for(let i=0;i<odd.length; i++){
-odd[i].style.backgroundColor="green"
-}
+// var itemList= document.querySelectorAll('.list-group-item')
+// itemList[2].style.color= "green"
+// var odd= document.querySelectorAll('.list-group-item:nth-child(odd)')
+// for(let i=0;i<odd.length; i++){
+// odd[i].style.backgroundColor="green"
+// }
+
+
+
+// TRAVERSING DOM
+
+//ParentNode
+
+// var listItems= document.querySelector('#items')
+// console.log(listItems)
+//console.log(listItems.parentNode)
+// console.log(listItems.parentNode.parentNode)
+
+//ParentElement
+//console.log(listItems.parentElement)
+// console.log(listItems.parentElement.parentElement)
+
+//ChildNodes
+// console.log(listItems.childNodes)
+// console.log(listItems.children)
+// console.log(listItems.children[2])
+
+//FirstChild
+// console.log(listItems.firstChild)
+
+
+//firstElementChild
+// console.log(listItems.firstElementChild)
+
+//lastchild
+// console.log(listItems.lastChild)
+
+//lastelementchild
+// console.log(listItems.lastElementChild)
+
+
+//nextsibling
+// console.log(listItems.nextSibling)
+
+//nextelementsibling
+// console.log(listItems.nextElementSibling)
+
+// previoussibling
+// console.log(listItems.previousSibling)
+
+//previouselementsibling
+// console.log(listItems.previousElementSibling)
+
+//createelement
+var newDiv= document.createElement('div')
+// console.log(newDiv)
+newDiv.className= 'myClass'
+newDiv.id= 'myID'
+//setAttribute
+newDiv.setAttribute('title', 'HelloTitle')
+
+//createtesxtnode
+var newDivText = document.createTextNode('Hello')
+// console.log(newDivText)
+
+//appendchild
+newDiv.appendChild(newDivText)
+
+var container= document.querySelector('header .container')
+var h1= document.querySelector('header h1')
+// console.log(newDiv)
+container.insertBefore(newDiv, h1);
+
+// var container2= document.querySelector('title .container')
+// var li= document.querySelector('title li')
+// container2.insertBefore(newDiv,li)
+
