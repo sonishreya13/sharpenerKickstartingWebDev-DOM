@@ -37,6 +37,24 @@
     </section>
     
 
-    <script src="main.js"></script>
+    <script src="main.js">
+        // Retrieve existing data from local storage
+let existingData = localStorage.getItem('userData');
+
+// Parse the existing data from JSON to an array or object
+existingData = existingData ? JSON.parse(existingData) : [];
+
+// Example of new user data
+let newUser = {
+    username: 'NewUser',
+    email: 'newuser@example.com'
+};
+
+// Add the new user to the existing data
+existingData.push(newUser);
+
+// Store the updated data back into local storage
+localStorage.setItem('userData', JSON.stringify(existingData));
+    </script>
   </body>
 </html>
