@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Booking App</title>
+  </head>
+  <body>
+    <header>
+      <h1>Book an appointment</h1>
+    </header>
+    <section class="container">
+      <form id="my-form" onsubmit="saveToLocalStorage(event)">
+        <div class="msg"></div>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" id="email" />
+        </div>
+        <div>
+          <label for="contact">Contact:</label>
+          <input type="number" id="contact" />
+        </div>
+        <input class="btn" type="submit" value="Submit" />
+      </form>
+      <ul id="listofitems"></ul>
+    </section>
+
+    <script>
+      function saveToLocalStorage(event) {
+          event.preventDefault(); // Prevent the form from submitting
+      let newUser = {
+          name: event.target.name.value,
+          email: event.target.email.value,
+          contact: event.target.contact.value
+      };
+      localStorage.setItem(newUser.email, JSON.stringify(newUser)); 
+      showUserOnScreen(newUser);
+      }
+      function showUserOnScreen(newUser){
+        const parentElement= document.getElementById('listofitems')
+        const childElement= document.createElement('li')
+        childElement.textContent= newUser.name + ' - ' + newUser.email + ' - ' + newUser.contact
+        parentElement.appendChild(childElement);
+      }
+    
+    </script>
+  </body>
+</html>
