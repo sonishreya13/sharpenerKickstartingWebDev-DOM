@@ -45,9 +45,17 @@
         const parentElement= document.getElementById('listofitems')
         const childElement= document.createElement('li')
         childElement.textContent= newUser.name + ' - ' + newUser.email + ' - ' + newUser.contact
-        parentElement.appendChild(childElement);
+
+      const deleteButton = document.createElement('input')
+      deleteButton.type= "button"
+      deleteButton.value = "Delete"
+      deleteButton.onclick= () =>{
+      localStorage.removeItem(newUser.email)
+      parentElement.removeChild(childElement)
       }
-    
+    childElement.appendChild(deleteButton)
+    parentElement.appendChild(childElement)
+      }
     </script>
   </body>
 </html>
